@@ -1,0 +1,15 @@
+.works {
+  @include var(background, color-light-1);
+  @include var(padding-bottom, main-length);
+  overflow: hidden;
+
+  & ::selection {
+    @include var(background-color, color-black);
+    @include var(color, color-light-1);
+  }
+}
+
+.project-desc {
+  width: 30vw;
+  padding: 2vw 0 0 0;
+}

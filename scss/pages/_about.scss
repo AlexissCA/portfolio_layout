@@ -1,0 +1,23 @@
+.about {
+  @include var(background, color-light-2);
+
+  & ::selection {
+    @include var(background-color, color-black);
+    @include var(color, color-light-2);
+  }
+}
+
+.about-info {
+  &__box {
+    margin: 14vh auto;
+    width: 50vw;
+  }
+  @media only screen and (max-height: 46.875em) {
+    &__box {
+      width: 65vw;
+    }
+    &__desc {
+      column-count: 2;
+    }
+  }
+}

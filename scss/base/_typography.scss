@@ -1,0 +1,136 @@
+body {
+  @include var(font-family, font-1);
+  @include var(font-size, font-size-basic);
+  @include var(line-height, font-size-basic);
+  @include var(font-weight, font-weight-2);
+  @include var(color, color-black);
+}
+
+.btn {
+  $border-weight: 3px;
+
+  position: relative;
+  z-index: 5;
+  pointer-events: auto;
+
+  &,
+  &:link,
+  &:visited {
+    @include var(font-weight, font-weight-3);
+    color: inherit;
+    width: max-content;
+    border-bottom: solid $border-weight transparent;
+    transition: color, 0.3s ease-out;
+  }
+  &:hover {
+    cursor: pointer;
+    @include var(color, color-primary-dark);
+  }
+
+  &:focus,
+  &:active {
+    outline: none;
+    border-bottom: solid $border-weight;
+    border-color: inherit;
+  }
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  &--nav {
+    &,
+    &:link,
+    &:visited {
+      @include var(font-family, font-2);
+      @include var(font-size, font-size-medium);
+      @include var(line-height, font-size-medium);
+      @include var(font-weight, font-weight-3);
+      padding-bottom: 0.4rem;
+      transition: all, 0.3s;
+    }
+  }
+
+  &--black:hover {
+    @include var(color, color-black);
+  }
+
+  &-light {
+    &::before {
+      content: "";
+      width: 1rem;
+      height: 1rem;
+      @include var(background, color-white);
+      border-radius: 50%;
+      box-shadow: 0 0 7rem 7rem map-get($vars, color-white);
+      box-shadow: 0 0 7rem 7rem var(--color-white);
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      right: 0;
+      opacity: 0;
+      transition: all, 0.3s ease-out;
+    }
+    &:hover::before {
+      opacity: 0.6;
+
+      @supports (mix-blend-mode: screen) {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.heading {
+  @include var(font-family, font-2);
+  @include var(font-size, font-size-medium);
+  @include var(line-height, font-size-medium);
+  @include var(font-weight, font-weight-3);
+  padding-bottom: 2px;
+}
+
+.project-title {
+  @include var(font-family, font-2);
+  @include var(font-size, font-size-big);
+  @include var(line-height, font-size-big);
+  @include var(font-weight, font-weight-2);
+}
+
+.p-title {
+  @include var(font-family, font-2);
+  @include var(font-size, font-size-basic);
+  @include var(line-height, font-size-small-3);
+  @include var(font-weight, font-weight-3);
+}
+
+.p-desc {
+  @include var(font-family, font-1);
+  @include var(font-size, font-size-small);
+  @include var(line-height, font-size-small-1);
+  @include var(font-weight, font-weight-3);
+}
+
+.showcase-item__title,
+.showcase-item__date {
+  @include var(font-size, font-size-small);
+  @include var(line-height, font-size-small);
+  @include var(font-weight, font-weight-2);
+  margin-bottom: 2px;
+}
+
+.showcase-item__logo {
+  @include var(font-family, font-2);
+  @include var(font-size, font-size-small);
+  @include var(line-height, font-size-small);
+  @include var(font-weight, font-weight-2);
+  padding-bottom: 4px;
+}
+
+.side-box_info {
+  @include var(font-size, font-size-tiny);
+  @include var(line-height, font-size-tiny);
+  @include var(font-weight, font-weight-3);
+  display: inline-block;
+  writing-mode: vertical-lr;
+  -ms-user-select: none;
+  user-select: none;
+}

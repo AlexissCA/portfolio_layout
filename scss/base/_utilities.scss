@@ -1,0 +1,62 @@
+@mixin center {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+}
+
+.pad-1 {
+  padding-bottom: 4rem;
+}
+
+.full-screen-box {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  margin: 0 map-get($vars, main-length);
+  margin: 0 var(--main-length);
+}
+
+.layout-box {
+  @include var(height, main-length--with-font-basic);
+  display: flex;
+  margin: 0 map-get($vars, main-length) 0 0;
+  margin: 0 var(--main-length) 0 0;
+  align-items: flex-end;
+
+  &--br {
+    align-items: flex-start;
+  }
+  &--tl {
+    margin: 0;
+  }
+}
+
+.side-box {
+  transform: translateY(-50%) rotate(-90deg);
+  position: fixed;
+  top: 50vh;
+  right: -7vh;
+  margin: 0 map-get($vars, main-length--half);
+  margin: 0 var(--main-length--half);
+}
+
+@supports (writing-mode: vertical-lr) {
+  .side-box {
+    transform: translateY(-50%) rotate(180deg);
+    right: 0;
+  }
+}
+
+@mixin col($value) {
+  -ms-grid-column: $value;
+  grid-column: $value;
+}
+
+@mixin row($value) {
+  -ms-grid-row: $value;
+  grid-row: $value;
+}

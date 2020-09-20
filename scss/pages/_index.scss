@@ -1,0 +1,59 @@
+.home {
+  @include var(padding-bottom, main-length);
+  @include gradient-2(to left, color-primary-light--2, color-light-1);
+
+  & ::selection {
+    @include var(background-color, color-black);
+    @include var(color, color-primary);
+  }
+
+  @supports (mix-blend-mode: screen) {
+    @include var(background, color-light-1);
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 20;
+      @include gradient-2(to left, color-primary-light, color-transparent);
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+
+    & ::selection {
+      @include var(color, color-light-1);
+    }
+  }
+
+  @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+    & .heading::before {
+      content: "";
+      @include var(width, logo-width);
+      height: ((map-get($vars, logo-width)) * 15 / 16);
+      height: calc((var(--logo-width)) * 15 / 16);
+      display: inline-block;
+      margin-right: 1.8vw;
+      -webkit-mask-image: url("../img/logo.svg");
+      mask-image: url("../img/logo.svg");
+      -webkit-mask-size: cover;
+      mask-size: cover;
+      @include gradient-3(
+        to left,
+        color-spectrum-5--dark,
+        color-primary-dark,
+        color-primary-light
+      );
+      animation: animate-gradient-3 15s infinite linear;
+    }
+  }
+}
+
+@keyframes animate-gradient-3 {
+  100% {
+    background-position: (-2 * (map-get($vars, logo-width))) 0;
+    background-position: calc(-2 * var(--logo-width)) 0;
+  }
+}

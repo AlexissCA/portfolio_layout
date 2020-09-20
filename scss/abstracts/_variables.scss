@@ -1,0 +1,66 @@
+$screen-size-tiny: 37.5em; // 600px
+$screen-size-tiny-2: 50em; // 800px
+$screen-size-small: 56.25em; // 900px
+$screen-size-medium: 62.5em; // 1000px
+$screen-size-medium-2: 75em; // 1200px
+$screen-size-medium-3: 87.5em; // 1400px
+$screen-size-big: 93.75em; // 1500px
+$screen-size-big-2: 100em; // 1600px
+
+$vars: (
+  font-1: (
+    "Rubik",
+    sans-serif,
+  ),
+  font-2: (
+    "Playfair Display",
+    serif,
+  ),
+  font-size-basic: 2.2rem,
+  font-size-tiny: 1.4rem,
+  font-size-small: 2rem,
+  font-size-small-1: 2.4rem,
+  font-size-small-2: 2.8rem,
+  font-size-small-3: 3rem,
+  font-size-medium: 4.4rem,
+  font-size-big: 8rem,
+  font-weight-1: 300,
+  font-weight-2: 400,
+  font-weight-3: 500,
+  color-white: #fff,
+  color-black: #000,
+  color-transparent: transparent,
+  color-light-1: #e3e9f5,
+  color-light-2: #f7f5e9,
+  color-primary: #00fed4,
+  color-primary-light: #00ffea,
+  color-primary-light--2: #88fff5,
+  color-primary-dark: #00e0bb,
+  color-spectrum-1: #b2ff9e,
+  color-spectrum-2: #affc41,
+  color-spectrum-3: #ffff00,
+  color-spectrum-4: #00ff00,
+  color-spectrum-5: #1dd3b0,
+  color-spectrum-5--dark: #159c81,
+  color-spectrum-6: #3c1642,
+  gap-1: 2.6vw,
+  gap-1--half: 1.3vw,
+  gap-2: 2.3vw,
+  main-length: 7vw,
+  // main-length + font-size-basic
+  main-length--with-font-basic: calc(7vw + 2.2rem),
+  // main-length - font-size-tiny / 2 - *for sidebar
+  main-length--half: calc((7vw - 1.4rem) / 2),
+  logo-width: 8rem,
+);
+
+:root {
+  @each $property, $value in $vars {
+    --#{$property}: #{$value};
+  }
+}
+
+@mixin var($property, $variable) {
+  #{$property}: map-get($vars, $variable);
+  #{$property}: var(--#{$variable});
+}

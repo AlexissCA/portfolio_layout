@@ -1,0 +1,134 @@
+@mixin img-bg($url-1, $url-2, $url-3, $url-4, $url-5) {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url($url-1);
+  @media only screen and (min-width: 37.5em),
+    (min-resolution: 192dpi) and (min-width: 18.75em),
+    (-webkit-min-device-pixel-ratio: 2) and (min-width: 18.75em),
+    (min-resolution: 288dpi) and (min-width: 12.5em),
+    (-webkit-min-device-pixel-ratio: 3) and (min-width: 12.5em) {
+    background-image: url($url-2);
+  }
+  @media only screen and (min-width: 75em),
+    (min-resolution: 192dpi) and (min-width: 37.5em),
+    (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+    (min-resolution: 288dpi) and (min-width: 25em),
+    (-webkit-min-device-pixel-ratio: 3) and (min-width: 25em) {
+    background-image: url($url-3);
+  }
+  @media only screen and (min-width: 96em),
+    (min-resolution: 192dpi) and (min-width: 48em),
+    (-webkit-min-device-pixel-ratio: 2) and (min-width: 48em),
+    (min-resolution: 288dpi) and (min-width: 32em),
+    (-webkit-min-device-pixel-ratio: 3) and (min-width: 32em) {
+    background-image: url($url-4);
+  }
+  @media only screen and (min-width: 145em),
+    (min-resolution: 192dpi) and (min-width: 72.5em),
+    (-webkit-min-device-pixel-ratio: 2) and (min-width: 72.5em),
+    (min-resolution: 288dpi) and (min-width: 48em),
+    (-webkit-min-device-pixel-ratio: 3) and (min-width: 48em) {
+    background-image: url($url-5);
+  }
+}
+
+@mixin img-vert($url-1, $url-2, $url-3, $url-4) {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url($url-1);
+  @media only screen and (min-width: 37.5em),
+    (min-resolution: 192dpi) and (min-width: 18.75em),
+    (-webkit-min-device-pixel-ratio: 2) and (min-width: 18.75em),
+    (min-resolution: 288dpi) and (min-width: 12.5em),
+    (-webkit-min-device-pixel-ratio: 3) and (min-width: 12.5em) {
+    background-image: url($url-2);
+  }
+  @media only screen and (min-width: 51em),
+    (min-resolution: 192dpi) and (min-width: 25em),
+    (-webkit-min-device-pixel-ratio: 2) and (min-width: 25em),
+    (min-resolution: 288dpi) and (min-width: 17em),
+    (-webkit-min-device-pixel-ratio: 3) and (min-width: 17em) {
+    background-image: url($url-3);
+  }
+  @media only screen and (min-width: 76em),
+    (min-resolution: 192dpi) and (min-width: 38em),
+    (-webkit-min-device-pixel-ratio: 2) and (min-width: 38em),
+    (min-resolution: 288dpi) and (min-width: 25em),
+    (-webkit-min-device-pixel-ratio: 3) and (min-width: 25em) {
+    background-image: url($url-4);
+  }
+}
+
+@mixin img-horiz($url-1, $url-2, $url-3, $url-4, $url-5) {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url($url-1);
+  @media only screen and (min-width: 37.5em),
+    (min-resolution: 192dpi) and (min-width: 18.75em),
+    (-webkit-min-device-pixel-ratio: 2) and (min-width: 18.75em),
+    (min-resolution: 288dpi) and (min-width: 12.5em),
+    (-webkit-min-device-pixel-ratio: 3) and (min-width: 12.5em) {
+    background-image: url($url-2);
+  }
+  @media only screen and (min-width: 50em),
+    (min-resolution: 192dpi) and (min-width: 25em),
+    (-webkit-min-device-pixel-ratio: 2) and (min-width: 25em),
+    (min-resolution: 288dpi) and (min-width: 16.7em),
+    (-webkit-min-device-pixel-ratio: 3) and (min-width: 16.7em) {
+    background-image: url($url-3);
+  }
+  @media only screen and (min-width: 64em),
+    (min-resolution: 192dpi) and (min-width: 32em),
+    (-webkit-min-device-pixel-ratio: 2) and (min-width: 32em),
+    (min-resolution: 288dpi) and (min-width: 22em),
+    (-webkit-min-device-pixel-ratio: 3) and (min-width: 22em) {
+    background-image: url($url-4);
+  }
+  @media only screen and (min-width: 96em),
+    (min-resolution: 192dpi) and (min-width: 48em),
+    (-webkit-min-device-pixel-ratio: 2) and (min-width: 48em),
+    (min-resolution: 288dpi) and (min-width: 32em),
+    (-webkit-min-device-pixel-ratio: 3) and (min-width: 32em) {
+    background-image: url($url-5);
+  }
+}
+
+.menu-img {
+  $url1: "../img/menuBg_600.jpg";
+  $url2: "../img/menuBg_1200.jpg";
+  $url3: "../img/menuBg_1550.jpg";
+  $url4: "../img/menuBg_2326.jpg";
+  $url5: "../img/menuBg_3100.jpg";
+  @include img-bg($url1, $url2, $url3, $url4, $url5);
+}
+
+.vert-img {
+  &--1 {
+    $url1: "../img/project1_work1_600.jpg";
+    $url2: "../img/project1_work1_820.jpg";
+    $url3: "../img/project1_work1_1229.jpg";
+    $url4: "../img/project1_work1_1638.jpg";
+    @include img-vert($url1, $url2, $url3, $url4);
+  }
+}
+
+.horiz-img {
+  &--1 {
+    $url1: "../img/project2_work1_600.jpg";
+    $url2: "../img/project2_work1_800.jpg";
+    $url3: "../img/project2_work1_1024.jpg";
+    $url4: "../img/project2_work1_1536.jpg";
+    $url5: "../img/project2_work1_2048.jpg";
+    @include img-horiz($url1, $url2, $url3, $url4, $url5);
+  }
+}

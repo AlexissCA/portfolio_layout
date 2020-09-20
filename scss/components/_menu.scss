@@ -1,0 +1,55 @@
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0;
+  width: 100%;
+  transform: translate(100vw);
+  transition: all 0.4s cubic-bezier(0.64, 0, 0.78, 0);
+}
+
+.menu-toggler {
+  position: fixed;
+  @include var(right, main-length);
+  @include var(top, main-length);
+  width: 8rem;
+  height: 2.2rem;
+  z-index: 40;
+  opacity: 0;
+  display: hidden;
+  cursor: pointer;
+
+  &:checked ~ .menu {
+    z-index: 30;
+    opacity: 1;
+    transform: translate(0vw);
+    display: block;
+  }
+  &:not(:checked):hover ~ #menu ~ .navigation > .layout-box > h4 {
+    @include var(color, color-primary-dark);
+  }
+  &:not(:checked):hover ~ #menu-home ~ .navigation > .layout-box > h4::before {
+    opacity: 0.6;
+
+    @supports (mix-blend-mode: screen) {
+      opacity: 1;
+    }
+  }
+
+  &:checked:hover ~ .menu > .navigation > .layout-box > h4 {
+    @include var(color, color-primary-dark);
+  }
+
+  &:checked ~ .gradient-btm {
+    z-index: 30;
+  }
+}
+
+#menu,
+#menu-home {
+  & ::selection {
+    background-color: transparent;
+    @include var(color, color-white);
+  }
+}

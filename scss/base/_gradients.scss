@@ -1,0 +1,82 @@
+@mixin gradient-2($direction, $color1, $color2) {
+  background: linear-gradient(
+    $direction,
+    map-get($vars, $color1),
+    map-get($vars, $color2)
+  );
+  background: linear-gradient($direction, var(--#{$color1}), var(--#{$color2}));
+}
+@mixin gradient-3($direction, $color1, $color2, $color3) {
+  background: linear-gradient(
+    $direction,
+    map-get($vars, $color1),
+    map-get($vars, $color2),
+    map-get($vars, $color3),
+    map-get($vars, $color1)
+  );
+  background: linear-gradient(
+    $direction,
+    var(--#{$color1}),
+    var(--#{$color2}),
+    var(--#{$color3}),
+    var(--#{$color1})
+  );
+}
+
+@mixin gradient-spectrum(
+  $direction,
+  $color1,
+  $color2,
+  $color3,
+  $color4,
+  $color5,
+  $color6
+) {
+  background: linear-gradient(
+    $direction,
+    map-get($vars, $color1),
+    map-get($vars, $color2),
+    map-get($vars, $color3),
+    map-get($vars, $color4),
+    map-get($vars, $color5),
+    map-get($vars, $color6),
+    map-get($vars, $color1)
+  );
+  background: linear-gradient(
+    $direction,
+    var(--#{$color1}),
+    var(--#{$color2}),
+    var(--#{$color3}),
+    var(--#{$color4}),
+    var(--#{$color5}),
+    var(--#{$color6}),
+    var(--#{$color1})
+  );
+}
+
+.gradient-btm {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 0.3rem;
+  @include gradient-spectrum(
+    to left,
+    color-spectrum-1,
+    color-spectrum-2,
+    color-spectrum-3,
+    color-spectrum-4,
+    color-spectrum-5,
+    color-spectrum-6
+  );
+  animation: animate-gradient 30s infinite linear;
+  &--top{
+    z-index: 50;
+  }
+}
+
+@keyframes animate-gradient {
+  100% {
+    background-position: -200vw 0;
+  }
+}
