@@ -20,7 +20,7 @@ body {
     color: inherit;
     width: max-content;
     border-bottom: solid $border-weight transparent;
-    transition: color, 0.3s ease-out;
+    transition: color 0.3s ease-out;
   }
   &:hover {
     cursor: pointer;
@@ -46,7 +46,7 @@ body {
       @include var(line-height, font-size-medium);
       @include var(font-weight, font-weight-3);
       padding-bottom: 0.4rem;
-      transition: all, 0.3s;
+      transition: all 0.3s;
     }
   }
 
@@ -68,7 +68,7 @@ body {
       top: 0;
       right: 0;
       opacity: 0;
-      transition: all, 0.3s ease-out;
+      transition: all 0.3s ease-out;
     }
     &:hover::before {
       opacity: 0.6;
@@ -86,6 +86,7 @@ body {
   @include var(line-height, font-size-medium);
   @include var(font-weight, font-weight-3);
   padding-bottom: 2px;
+  pointer-events: none;
 }
 
 .project-title {

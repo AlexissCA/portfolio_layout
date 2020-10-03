@@ -156,7 +156,7 @@ body {
     color: inherit;
     width: max-content;
     border-bottom: solid 3px transparent;
-    transition: color, 0.3s ease-out; }
+    transition: color 0.3s ease-out; }
   .btn:hover {
     cursor: pointer;
     color: #00e0bb;
@@ -177,7 +177,7 @@ body {
     font-weight: 500;
     font-weight: var(--font-weight-3);
     padding-bottom: 0.4rem;
-    transition: all, 0.3s; }
+    transition: all 0.3s; }
   .btn--black:hover {
     color: #000;
     color: var(--color-black); }
@@ -195,7 +195,7 @@ body {
     top: 0;
     right: 0;
     opacity: 0;
-    transition: all, 0.3s ease-out; }
+    transition: all 0.3s ease-out; }
   .btn-light:hover::before {
     opacity: 0.6; }
     @supports (mix-blend-mode: screen) {
@@ -211,7 +211,8 @@ body {
   line-height: var(--font-size-medium);
   font-weight: 500;
   font-weight: var(--font-weight-3);
-  padding-bottom: 2px; }
+  padding-bottom: 2px;
+  pointer-events: none; }
 
 .project-title {
   font-family: "Playfair Display", serif;
@@ -306,7 +307,8 @@ body {
   top: 50vh;
   right: -7vh;
   margin: 0 calc((7vw - 1.4rem) / 2);
-  margin: 0 var(--main-length--half); }
+  margin: 0 var(--main-length--half);
+  pointer-events: none; }
 
 @supports (writing-mode: vertical-lr) {
   .side-box {
@@ -427,7 +429,7 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 15; }
+    z-index: 20; }
   .img-toggler:checked ~ .gallery-item > .gallery-item__box {
     display: block;
     width: 100vw;
@@ -451,7 +453,7 @@ body {
   position: relative;
   top: 0;
   left: 0;
-  z-index: 10; }
+  z-index: 16; }
   .gallery-item__box {
     display: none;
     position: fixed;
@@ -468,7 +470,7 @@ body {
       background-color: var(--color-black);
       width: 100%;
       height: 100%;
-      opacity: 0.8; }
+      opacity: 0.9; }
   .gallery-item__img {
     position: absolute;
     top: 50vh;
@@ -634,6 +636,7 @@ body {
     column-count: 2; } }
 
 .home {
+  position: relative;
   padding-bottom: 7vw;
   padding-bottom: var(--main-length);
   background: linear-gradient(to left, #88fff5, #e3e9f5);
