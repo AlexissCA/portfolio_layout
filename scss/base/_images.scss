@@ -36,7 +36,6 @@
 }
 
 @mixin img-vert($url-1, $url-2, $url-3, $url-4) {
-  position: absolute;
   width: 100%;
   height: 100%;
   background-size: cover;
@@ -110,25 +109,4 @@
   $url4: "../img/menuBg_2326.jpg";
   $url5: "../img/menuBg_3100.jpg";
   @include img-bg($url1, $url2, $url3, $url4, $url5);
-}
-
-.vert-img {
-  &--1 {
-    $url1: "../img/project1_work1_600.jpg";
-    $url2: "../img/project1_work1_820.jpg";
-    $url3: "../img/project1_work1_1229.jpg";
-    $url4: "../img/project1_work1_1638.jpg";
-    @include img-vert($url1, $url2, $url3, $url4);
-  }
-}
-
-.horiz-img {
-  &--1 {
-    $url1: "../img/project2_work1_600.jpg";
-    $url2: "../img/project2_work1_800.jpg";
-    $url3: "../img/project2_work1_1024.jpg";
-    $url4: "../img/project2_work1_1536.jpg";
-    $url5: "../img/project2_work1_2048.jpg";
-    @include img-horiz($url1, $url2, $url3, $url4, $url5);
-  }
 }

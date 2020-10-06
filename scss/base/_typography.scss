@@ -86,7 +86,7 @@ body {
   @include var(line-height, font-size-medium);
   @include var(font-weight, font-weight-3);
   padding-bottom: 2px;
-  pointer-events: none;
+  z-index: 1;
 }
 
 .project-title {

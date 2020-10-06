@@ -60,6 +60,7 @@
   left: 0;
   width: 100vw;
   height: 0.3rem;
+  z-index: 5;
   @include gradient-spectrum(
     to left,
     color-spectrum-1,

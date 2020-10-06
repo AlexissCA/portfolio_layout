@@ -43,6 +43,7 @@
   margin: 0 map-get($vars, main-length--half);
   margin: 0 var(--main-length--half);
   pointer-events: none;
+  z-index: 1;
 }
 
 @supports (writing-mode: vertical-lr) {
