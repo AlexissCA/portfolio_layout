@@ -5,6 +5,7 @@
   z-index: -1;
   opacity: 0;
   width: 100%;
+  height: 100%;
   transform: translate(100vw);
   transition: all 0.4s cubic-bezier(0.64, 0, 0.78, 0);
 }
@@ -16,9 +17,22 @@
   width: 8rem;
   height: 2.2rem;
   z-index: 40;
+  -webkit-appearance: none;
   opacity: 0;
   display: hidden;
   cursor: pointer;
+
+  @media only screen and (max-width: $screen-size-medium-2) {
+    @include var(right, main-length-small);
+    @include var(top, main-length-small--double);
+  }
+  @media only screen and (max-height: $screen-size-tiny) and (max-width: $screen-size-tiny-2) and (orientation: landscape) {
+    @include var(right, main-length-small);
+    @include var(top, main-length);
+  }
+  @media only screen and (max-height: 13.75em) {
+    pointer-events: none;
+  }
 
   &:checked ~ .menu {
     z-index: 30;
@@ -26,13 +40,16 @@
     transform: translate(0vw);
     display: block;
   }
+
   &:not(:checked):hover ~ #menu ~ .navigation > .layout-box > h4 {
     @include var(color, color-primary-dark);
   }
+
   &:not(:checked):active ~ #menu ~ .navigation > .layout-box > h4 {
     border-bottom: 3px solid;
     border-color: inherit;
   }
+
   &:not(:checked):hover ~ #menu-home ~ .navigation > .layout-box > h4::before {
     opacity: 0.6;
     @supports (mix-blend-mode: screen) {
@@ -42,6 +59,9 @@
 
   &:checked:hover ~ .menu > .navigation > .layout-box > h4 {
     @include var(color, color-primary-dark);
+  }
+  &:checked ~ .menu > .navigation > .layout-box > h4 {
+    display: hidden;
   }
 
   &:checked:active ~ .menu > .navigation > .layout-box > h4 {

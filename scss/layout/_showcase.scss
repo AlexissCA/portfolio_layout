@@ -1,9 +1,9 @@
 .showcase {
   $offset: 5rem;
 
-  // background: red;
   width: 72vw;
-  @include var(margin, main-length);
+  margin: auto;
+  @include var(margin-top, main-length);
   margin-bottom: 0;
   display: -ms-grid;
   display: grid;
@@ -115,10 +115,12 @@
   }
 
   @media only screen and (max-width: $screen-size-medium-2) {
+    width: 80vw;
+    @include var(margin-top, main-length-small--double);
     -ms-grid-columns: 1fr 1fr;
     grid-template-columns: repeat(2, 1fr);
     > * {
-      width: 34.7vw;
+      width: 38.7vw;
       @include var(padding-right, gap-1);
     }
 
@@ -155,13 +157,23 @@
   @media only screen and (max-width: $screen-size-tiny-2) {
     display: flex;
     flex-direction: column;
+    width: 100%;
     > * {
       width: 100%;
       height: 100%;
       padding-right: 0;
     }
     > *:not(:first-child) {
-      margin-top: 0;
+      @include var(margin-top, main-length-small);
+    }
+  }
+  @media only screen and (max-height: $screen-size-tiny) and (max-width: $screen-size-tiny-2) and (orientation: landscape) {
+    @include var(margin-top, main-length-small);
+    > * {
+      width: 40%;
+      height: 40%;
+      padding-right: 0;
+      margin: 0 auto;
     }
   }
 }

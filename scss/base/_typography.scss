@@ -16,7 +16,7 @@ body {
   &,
   &:link,
   &:visited {
-    @include var(font-weight, font-weight-3);
+    @include var(font-weight, font-weight-4);
     color: inherit;
     width: max-content;
     border-bottom: solid $border-weight transparent;
@@ -37,6 +37,10 @@ body {
     border: 0;
   }
 
+  @media only screen and (max-height: 13.75em) {
+    pointer-events: none;
+  }
+
   &--nav {
     &,
     &:link,
@@ -44,7 +48,7 @@ body {
       @include var(font-family, font-2);
       @include var(font-size, font-size-medium);
       @include var(line-height, font-size-medium);
-      @include var(font-weight, font-weight-3);
+      @include var(font-weight, font-weight-4);
       padding-bottom: 0.4rem;
       transition: all 0.3s;
     }
@@ -65,10 +69,16 @@ body {
       box-shadow: 0 0 7rem 7rem var(--color-white);
       position: absolute;
       z-index: -1;
-      top: 0;
+      top: 0.6rem;
       right: 0;
       opacity: 0;
       transition: all 0.3s ease-out;
+
+      @media only screen and (max-width: $screen-size-medium-2) {
+        opacity: 0.4;
+        box-shadow: 0 0 9rem 9rem map-get($vars, color-white);
+        box-shadow: 0 0 9rem 9rem var(--color-white);
+      }
     }
     &:hover::before {
       opacity: 0.6;
@@ -84,9 +94,14 @@ body {
   @include var(font-family, font-2);
   @include var(font-size, font-size-medium);
   @include var(line-height, font-size-medium);
-  @include var(font-weight, font-weight-3);
-  padding-bottom: 2px;
+  @include var(font-weight, font-weight-4);
+  padding-bottom: 3px;
   z-index: 1;
+
+  @media only screen and (max-width: $screen-size-tiny) {
+    @include var(font-size, font-size-medium-2);
+    @include var(line-height, font-size-medium-2);
+  }
 }
 
 .project-title {
@@ -94,20 +109,39 @@ body {
   @include var(font-size, font-size-big);
   @include var(line-height, font-size-big);
   @include var(font-weight, font-weight-2);
+  @media only screen and (max-width: $screen-size-tiny-2) {
+    @include var(font-size, font-size-big-2);
+    @include var(line-height, font-size-big-2);
+    @include var(font-weight, font-weight-4);
+  }
 }
 
 .p-title {
   @include var(font-family, font-2);
   @include var(font-size, font-size-basic);
   @include var(line-height, font-size-small-3);
-  @include var(font-weight, font-weight-3);
+  @include var(font-weight, font-weight-4);
+  @media only screen and (max-width: $screen-size-small),
+    (max-height: $screen-size-tiny-3) and (max-width: $screen-size-small) {
+    @include var(font-size, font-size-tiny-2);
+    @include var(line-height, font-size-small-4);
+    @include var(font-weight, font-weight-6);
+    @include var(color, color-grey-dark);
+  }
 }
 
 .p-desc {
   @include var(font-family, font-1);
   @include var(font-size, font-size-small);
   @include var(line-height, font-size-small-1);
-  @include var(font-weight, font-weight-3);
+  @include var(font-weight, font-weight-4);
+  @media only screen and (max-width: $screen-size-small),
+    (max-height: $screen-size-tiny-3) and (max-width: $screen-size-small) {
+    @include var(font-size, font-size-tiny-2);
+    @include var(line-height, font-size-small);
+    @include var(font-weight, font-weight-2);
+    @include var(color, color-grey-dark);
+  }
 }
 
 .showcase-item__title,
@@ -123,13 +157,12 @@ body {
   @include var(font-size, font-size-small);
   @include var(line-height, font-size-small);
   @include var(font-weight, font-weight-2);
-  padding-bottom: 4px;
 }
 
 .side-box_info {
   @include var(font-size, font-size-tiny);
   @include var(line-height, font-size-tiny);
-  @include var(font-weight, font-weight-3);
+  @include var(font-weight, font-weight-4);
   display: inline-block;
   writing-mode: vertical-lr;
   -ms-user-select: none;

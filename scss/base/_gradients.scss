@@ -29,6 +29,14 @@
     background-position: calc(-2 * var(--logo-width)) 0;
   }
 }
+@media only screen and (max-width: $screen-size-medium-4) {
+  @keyframes animate-gradient-3 {
+    100% {
+      background-position: (-2 * (map-get($vars, logo-width-small))) 0;
+      background-position: calc(-2 * var(--logo-width-small)) 0;
+    }
+  }
+}
 
 @mixin gradient-spectrum(
   $direction,

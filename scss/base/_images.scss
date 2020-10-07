@@ -1,9 +1,13 @@
-@mixin img-bg($url-1, $url-2, $url-3, $url-4, $url-5) {
+@mixin center-full-screen() {
   width: 100%;
   height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+@mixin img-bg($url-1, $url-2, $url-3, $url-4, $url-5) {
+  @include center-full-screen();
   background-image: url($url-1);
   @media only screen and (min-width: 37.5em),
     (min-resolution: 192dpi) and (min-width: 18.75em),
@@ -36,11 +40,7 @@
 }
 
 @mixin img-vert($url-1, $url-2, $url-3, $url-4) {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  @include center-full-screen();
   background-image: url($url-1);
   @media only screen and (min-width: 37.5em),
     (min-resolution: 192dpi) and (min-width: 18.75em),
@@ -66,11 +66,7 @@
 }
 
 @mixin img-horiz($url-1, $url-2, $url-3, $url-4, $url-5) {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  @include center-full-screen();
   background-image: url($url-1);
   @media only screen and (min-width: 37.5em),
     (min-resolution: 192dpi) and (min-width: 18.75em),
@@ -108,5 +104,6 @@
   $url3: "../img/menuBg_1550.jpg";
   $url4: "../img/menuBg_2326.jpg";
   $url5: "../img/menuBg_3100.jpg";
+
   @include img-bg($url1, $url2, $url3, $url4, $url5);
 }

@@ -1,3 +1,61 @@
+.projects {
+  .project {
+    &__gallery {
+      width: 100%;
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+
+      > * {
+        width: calc(100% - 1.3vw);
+        position: relative;
+        @include var(margin-top, gap-1);
+      }
+
+      &-img {
+        width: 100%;
+        height: 100%;
+      }
+
+      :nth-child(odd) {
+        @include var(margin-right, gap-1--half);
+        @include column(1);
+      }
+      :nth-child(even) {
+        @include var(margin-left, gap-1--half);
+        @include column(2);
+      }
+      :nth-child(1),
+      :nth-child(2) {
+        @include row(1);
+      }
+      :nth-child(3),
+      :nth-child(4) {
+        @include row(2);
+      }
+
+      @media only screen and (max-width: $screen-size-small) {
+        display: flex;
+        flex-direction: column;
+
+        :nth-child(odd),
+        :nth-child(even) {
+          margin: 0;
+          width: 100%;
+          @include var(margin-top, gap-1--half);
+          @include var(margin-bottom, gap-1--half);
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: $screen-size-small) {
+    .project:not(:last-of-type) {
+      @include var(margin-bottom, main-length-small);
+    }
+  }
+}
+
 .height-vert {
   height: calc(52.125vw - 1.3rem);
   @media only screen and (max-width: $screen-size-small) {
@@ -17,56 +75,6 @@
   }
 }
 
-.project {
-  &__gallery {
-    width: 100%;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
-
-    > * {
-      width: calc(100% - 1.3vw);
-      position: relative;
-      @include var(margin-top, gap-1);
-    }
-
-    &-img {
-      width: 100%;
-      height: 100%;
-    }
-
-    :nth-child(odd) {
-      @include var(margin-right, gap-1--half);
-      @include column(1);
-    }
-    :nth-child(even) {
-      @include var(margin-left, gap-1--half);
-      @include column(2);
-    }
-    :nth-child(1),
-    :nth-child(2) {
-      @include row(1);
-    }
-    :nth-child(3),
-    :nth-child(4) {
-      @include row(2);
-    }
-
-    @media only screen and (max-width: $screen-size-small) {
-      display: flex;
-      flex-direction: column;
-
-      :nth-child(odd),
-      :nth-child(even) {
-        margin: 0;
-        @include var(margin-bottom, gap-1);
-        width: 100%;
-      }
-    }
-  }
-}
-
 .img-toggler {
   position: absolute;
   top: 0;
@@ -74,8 +82,8 @@
   width: 100%;
   height: 100%;
   z-index: 10;
-  -webkit-appearance: none;
-  opacity: 0;
+  // -webkit-appearance: none;
+  // opacity: 0;
   outline: none;
   @media only screen and (max-width: $screen-size-small) {
     left: 0;
@@ -88,6 +96,7 @@
     width: 100vw;
     height: 100vh;
     z-index: 30;
+    margin: 0 !important;
   }
 
   &:checked ~ .gallery-item > .gallery-item__box {
@@ -97,6 +106,7 @@
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     background-position: center;
+    margin: 0 !important;
   }
 
   &:hover:checked {
@@ -153,10 +163,11 @@
   }
 
   &__img {
-    @include center();
+    // @include center();
     display: block;
     height: 100%;
     width: auto !important;
     background-position: center;
+    margin: 0 !important;
   }
 }

@@ -7,17 +7,29 @@
 
 .pad-1 {
   padding-bottom: 4rem;
+
+  @media only screen and (max-width: $screen-size-small) {
+    padding-bottom: 3rem;
+  }
+  @media only screen and (max-height: $screen-size-tiny-3) {
+    padding-bottom: 2rem;
+  }
 }
 
 .full-screen-box {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
 }
 
 .container {
   margin: 0 map-get($vars, main-length);
   margin: 0 var(--main-length);
+
+  @media only screen and (max-width: $screen-size-medium-2) {
+    margin: 0 map-get($vars, main-length-small);
+    margin: 0 var(--main-length-small);
+  }
 }
 
 .layout-box {
@@ -32,6 +44,18 @@
   }
   &--tl {
     margin: 0;
+  }
+
+  @media only screen and (max-width: $screen-size-medium-2) {
+    margin: 0 map-get($vars, main-length-small) 0 0;
+    margin: 0 var(--main-length-small) 0 0;
+    @include var(height, main-length-small--double-with-font-basic);
+  }
+
+  @media only screen and (max-height: $screen-size-tiny) and (max-width: $screen-size-tiny-2) and (orientation: landscape) {
+    margin: 0 map-get($vars, main-length-small) 0 0;
+    margin: 0 var(--main-length-small) 0 0;
+    @include var(height, main-length-small--double);
   }
 }
 
@@ -50,7 +74,12 @@
     right: 0;
   }
 
-  @media only screen and (max-width: $screen-size-medium) {
+  @media only screen and (max-width: $screen-size-medium-2) {
+    margin: 0 map-get($vars, main-length-small--half);
+    margin: 0 var(--main-length-small--half);
+  }
+
+  @media only screen and (max-width: $screen-size-medium), (max-height: 11em) {
     display: none;
   }
 }

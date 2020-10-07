@@ -1,5 +1,7 @@
 $screen-size-tiny: 37.5em; // 600px
 $screen-size-tiny-2: 50em; // 800px
+$screen-size-tiny-3: 43.75em; // 700px
+$screen-size-tiny-4: 25em; // 400px
 $screen-size-small: 56.25em; // 900px
 $screen-size-medium: 62.5em; // 1000px
 $screen-size-medium-4: 68.75em; // 1100px
@@ -19,17 +21,25 @@ $vars: (
   ),
   font-size-basic: 2.2rem,
   font-size-tiny: 1.4rem,
+  font-size-tiny-2: 1.6rem,
   font-size-small: 2rem,
   font-size-small-1: 2.4rem,
   font-size-small-2: 2.8rem,
   font-size-small-3: 3rem,
+  font-size-small-4: 2.1rem,
+  font-size-medium-2: 3.4rem,
   font-size-medium: 4.4rem,
   font-size-big: 8rem,
+  font-size-big-2: 5rem,
   font-weight-1: 300,
   font-weight-2: 400,
-  font-weight-3: 500,
+  font-weight-3: 450,
+  font-weight-4: 500,
+  font-weight-5: 550,
+  font-weight-6: 600,
   color-white: #fff,
   color-black: #000,
+  color-grey-dark: #444,
   color-transparent: transparent,
   color-light-1: #e3e9f5,
   color-light-2: #f7f5e9,
@@ -52,7 +62,18 @@ $vars: (
   main-length--with-font-basic: calc(7vw + 2.2rem),
   // main-length - font-size-tiny / 2 - *for sidebar
   main-length--half: calc((7vw - 1.4rem) / 2),
+  main-length-small: 5vw,
+  // main-length-small - font-size-tiny / 2 - *for sidebar
+  main-length-small--half: calc((5vw - 1.4rem) / 2),
+  main-length-small--double: 10vw,
+  // main-length-small * 2 + font-size-basic-1
+  main-length-small--double-with-font-basic: calc(10vw + 2.2rem),
+  // main-length-small * 2 - font-size-basic
+  main-length-small--double-without-font-basic: calc(10vw - 2.2rem),
   logo-width: 8rem,
+  logo-width-small: 6vw,
+  logo-height: 7.5rem,
+  logo-height-small: 6vw * 15 / 16,
 );
 
 :root {

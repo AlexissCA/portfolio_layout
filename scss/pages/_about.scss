@@ -1,4 +1,5 @@
 .about {
+  width: 100%;
   @include var(background, color-light-2);
 
   & ::selection {
@@ -8,31 +9,34 @@
 }
 
 .about-info {
+  width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
   &__box {
-    margin: 14vh auto;
     width: 50vw;
-  }
+    @include center();
 
-  @media only screen and (max-height: 46.875em) {
-    &__box {
-      width: 65vw;
+    @media only screen and (max-width: $screen-size-medium-3) {
+      width: 60vw;
     }
-    &__desc {
-      column-count: 2;
-    }
-  }
-
-  @media only screen and (max-width: $screen-size-medium-4) {
-    &__box {
-      margin: 14vw auto 10vw auto;
-      width: 65vw;
-    }
-  }
-
-  @media only screen and (max-width: $screen-size-tiny-2) {
-    &__box {
-      margin: 20vw auto;
+    @media only screen and (max-width: $screen-size-medium-2) {
       width: 75vw;
+    }
+    @media only screen and (max-width: $screen-size-tiny-2) {
+      margin-top: 4vw;
+      padding-right: 1.5vw;
+      width: 90vw;
+    }
+    @media only screen and (max-height: $screen-size-tiny-4) and (max-width: $screen-size-small) {
+      margin-top: 3vw;
+      // margin-bottom: 10vw;
+    }
+    @media only screen and (max-height: $screen-size-tiny-4) and (max-width: $screen-size-tiny) {
+      margin-top: 10vw;
+      margin-bottom: 10vw;
     }
   }
 }

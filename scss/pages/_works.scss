@@ -1,11 +1,17 @@
 .works {
   @include var(background, color-light-1);
   @include var(padding-bottom, main-length);
-  overflow: hidden;
 
   & ::selection {
     @include var(background-color, color-black);
     @include var(color, color-light-1);
+  }
+
+  @media only screen and (max-width: $screen-size-medium-2) {
+    @include var(padding-bottom, main-length-small--double);
+  }
+  @media only screen and (max-height: $screen-size-tiny) and (max-width: $screen-size-tiny-2) and (orientation: landscape) {
+    @include var(padding-bottom, main-length-small--double-without-font-basic);
   }
 }
 

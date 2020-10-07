@@ -1,4 +1,5 @@
 .home {
+  min-height: 100vh;
   position: relative;
   @include var(padding-bottom, main-length);
   @include gradient-2(to left, color-primary-light--2, color-light-1);
@@ -25,14 +26,23 @@
     & ::selection {
       @include var(color, color-light-1);
     }
+
+    @media only screen and (max-width: $screen-size-medium-2) {
+      @include var(padding-bottom, main-length-small--double);
+    }
+    @media only screen and (max-height: $screen-size-tiny) and (max-width: $screen-size-tiny-2) and (orientation: landscape) {
+      @include var(
+        padding-bottom,
+        main-length-small--double-without-font-basic
+      );
+    }
   }
 
   @supports (-webkit-mask-image: url()) or (mask-image: url()) {
     & .heading::before {
       content: "";
       @include var(width, logo-width);
-      height: ((map-get($vars, logo-width)) * 15 / 16);
-      height: calc((var(--logo-width)) * 15 / 16);
+      @include var(height, logo-height);
       display: inline-block;
       margin-right: 1.8vw;
       -webkit-mask-image: url("../img/logo.svg");
@@ -46,6 +56,11 @@
         color-primary-light
       );
       animation: animate-gradient-3 15s infinite linear;
+
+      @media only screen and (max-width: $screen-size-medium-4) {
+        @include var(width, logo-width-small);
+        @include var(height, logo-height-small);
+      }
     }
   }
 }

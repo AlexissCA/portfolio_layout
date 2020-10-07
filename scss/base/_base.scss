@@ -9,7 +9,11 @@
 html {
   font-size: 62.5%;
   @supports (mix-blend-mode: screen) {
-    @include var(background, color-light-1);
+    @include var(background, color-light-2);
+  }
+  @media only screen and (max-width: $screen-size-tiny),
+  (max-height: $screen-size-tiny-3) {
+    font-size: 50%;
   }
 }
 
