@@ -6,6 +6,7 @@
   );
   background: linear-gradient($direction, var(--#{$color1}), var(--#{$color2}));
 }
+
 @mixin gradient-3($direction, $color1, $color2, $color3) {
   background: linear-gradient(
     $direction,
@@ -21,6 +22,12 @@
     var(--#{$color3}),
     var(--#{$color1})
   );
+}
+@keyframes animate-gradient-3 {
+  100% {
+    background-position: (-2 * (map-get($vars, logo-width))) 0;
+    background-position: calc(-2 * var(--logo-width)) 0;
+  }
 }
 
 @mixin gradient-spectrum(
@@ -70,13 +77,12 @@
     color-spectrum-5,
     color-spectrum-6
   );
-  animation: animate-gradient 30s infinite linear;
-  &--top{
+  animation: animate-gradient-btm 30s infinite linear;
+  &--top {
     z-index: 50;
   }
 }
-
-@keyframes animate-gradient {
+@keyframes animate-gradient-btm {
   100% {
     background-position: -200vw 0;
   }

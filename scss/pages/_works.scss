@@ -10,6 +10,13 @@
 }
 
 .project-desc {
-  width: 30vw;
+  width: 35vw;
   padding: 2vw 0 0 0;
+
+  @media only screen and (max-width: $screen-size-medium-3) {
+    width: 50vw;
+  }
+  @media only screen and (max-width: $screen-size-medium-4) {
+    width: 100%;
+  }
 }

@@ -10,7 +10,6 @@
 
   @supports (mix-blend-mode: screen) {
     @include var(background, color-light-1);
-
     &::after {
       content: "";
       width: 100%;
@@ -23,7 +22,6 @@
       mix-blend-mode: screen;
       pointer-events: none;
     }
-
     & ::selection {
       @include var(color, color-light-1);
     }
@@ -49,12 +47,5 @@
       );
       animation: animate-gradient-3 15s infinite linear;
     }
-  }
-}
-
-@keyframes animate-gradient-3 {
-  100% {
-    background-position: (-2 * (map-get($vars, logo-width))) 0;
-    background-position: calc(-2 * var(--logo-width)) 0;
   }
 }

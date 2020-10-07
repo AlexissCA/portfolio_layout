@@ -44,20 +44,21 @@
   margin: 0 var(--main-length--half);
   pointer-events: none;
   z-index: 1;
-}
 
-@supports (writing-mode: vertical-lr) {
-  .side-box {
+  @supports (writing-mode: vertical-lr) {
     transform: translateY(-50%) rotate(180deg);
     right: 0;
   }
+
+  @media only screen and (max-width: $screen-size-medium) {
+    display: none;
+  }
 }
 
-@mixin col($value) {
+@mixin column($value) {
   -ms-grid-column: $value;
   grid-column: $value;
 }
-
 @mixin row($value) {
   -ms-grid-row: $value;
   grid-row: $value;

@@ -1,21 +1,18 @@
 .height-vert {
   height: calc(52.125vw - 1.3rem);
+  @media only screen and (max-width: $screen-size-small) {
+    height: calc(107.5vw - 2rem);
+  }
 }
 .height-horiz {
   height: calc(33.36vw - 0.7rem);
+  @media only screen and (max-width: $screen-size-small) {
+    height: calc(68.8vw - 1.4rem);
+  }
 }
 .height-sq {
   height: calc(41.7vw - 1rem);
-}
-
-@media (max-width: $screen-size-small) {
-  .height-vert {
-    height: calc(107.5vw - 2rem);
-  }
-  .height-horiz {
-    height: calc(68.8vw - 1.4rem);
-  }
-  .height-sq {
+  @media only screen and (max-width: $screen-size-small) {
     height: calc(86vw - 1.7rem);
   }
 }
@@ -28,22 +25,6 @@
     -ms-grid-columns: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
 
-    :nth-child(odd) {
-      @include var(margin-right, gap-1--half);
-      @include col(1);
-    }
-    :nth-child(even) {
-      @include var(margin-left, gap-1--half);
-      @include col(2);
-    }
-    :nth-child(1),
-    :nth-child(2) {
-      @include row(1);
-    }
-    :nth-child(3),
-    :nth-child(4) {
-      @include row(2);
-    }
     > * {
       width: calc(100% - 1.3vw);
       position: relative;
@@ -55,7 +36,24 @@
       height: 100%;
     }
 
-    @media (max-width: $screen-size-small) {
+    :nth-child(odd) {
+      @include var(margin-right, gap-1--half);
+      @include column(1);
+    }
+    :nth-child(even) {
+      @include var(margin-left, gap-1--half);
+      @include column(2);
+    }
+    :nth-child(1),
+    :nth-child(2) {
+      @include row(1);
+    }
+    :nth-child(3),
+    :nth-child(4) {
+      @include row(2);
+    }
+
+    @media only screen and (max-width: $screen-size-small) {
       display: flex;
       flex-direction: column;
 
@@ -79,8 +77,7 @@
   -webkit-appearance: none;
   opacity: 0;
   outline: none;
-
-  @media (max-width: $screen-size-small) {
+  @media only screen and (max-width: $screen-size-small) {
     left: 0;
   }
 

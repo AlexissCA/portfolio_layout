@@ -35,7 +35,6 @@
   }
   &:not(:checked):hover ~ #menu-home ~ .navigation > .layout-box > h4::before {
     opacity: 0.6;
-
     @supports (mix-blend-mode: screen) {
       opacity: 1;
     }

@@ -12,12 +12,27 @@
     margin: 14vh auto;
     width: 50vw;
   }
+
   @media only screen and (max-height: 46.875em) {
     &__box {
       width: 65vw;
     }
     &__desc {
       column-count: 2;
+    }
+  }
+
+  @media only screen and (max-width: $screen-size-medium-4) {
+    &__box {
+      margin: 14vw auto 10vw auto;
+      width: 65vw;
+    }
+  }
+
+  @media only screen and (max-width: $screen-size-tiny-2) {
+    &__box {
+      margin: 20vw auto;
+      width: 75vw;
     }
   }
 }
