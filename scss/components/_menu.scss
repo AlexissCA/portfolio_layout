@@ -45,9 +45,15 @@
     @include var(color, color-primary-dark);
   }
 
-  &:not(:checked):active ~ #menu ~ .navigation > .layout-box > h4 {
+  &:checked:active ~ .menu > .navigation > .layout-box > h4,
+  &:checked:focus ~ .menu > .navigation > .layout-box > h4 {
     border-bottom: 3px solid;
     border-color: inherit;
+  }
+
+  &:checked:focus:hover ~ .menu > .navigation > .layout-box > h4,
+  &:checked:active:hover ~ .menu > .navigation > .layout-box > h4 {
+    @include var(border-color, color-primary-dark);
   }
 
   &:not(:checked):hover ~ #menu-home ~ .navigation > .layout-box > h4::before {
@@ -60,13 +66,9 @@
   &:checked:hover ~ .menu > .navigation > .layout-box > h4 {
     @include var(color, color-primary-dark);
   }
-  &:checked ~ .menu > .navigation > .layout-box > h4 {
-    display: hidden;
-  }
 
-  &:checked:active ~ .menu > .navigation > .layout-box > h4 {
-    border-bottom: 3px solid;
-    border-color: inherit;
+  &:checked ~ .navigation > .layout-box > h4 {
+    opacity: 0;
   }
 
   &:checked ~ .gradient-btm {

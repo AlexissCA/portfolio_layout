@@ -1,5 +1,6 @@
 .about {
   width: 100%;
+  height: 100%;
   @include var(background, color-light-2);
 
   & ::selection {
@@ -9,12 +10,6 @@
 }
 
 .about-info {
-  width: 100%;
-  min-height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-
   &__box {
     width: 50vw;
     @include center();
@@ -26,17 +21,26 @@
       width: 75vw;
     }
     @media only screen and (max-width: $screen-size-tiny-2) {
+      width: 90vw;
       margin-top: 4vw;
       padding-right: 1.5vw;
-      width: 90vw;
     }
-    @media only screen and (max-height: $screen-size-tiny-4) and (max-width: $screen-size-small) {
-      margin-top: 3vw;
-      // margin-bottom: 10vw;
+
+    @media only screen and (max-height: $screen-size-tiny-5) and (min-width: $screen-size-medium-2) {
+      margin: 3vw 0 7vw 0;
+      width: 75vw;
     }
-    @media only screen and (max-height: $screen-size-tiny-4) and (max-width: $screen-size-tiny) {
-      margin-top: 10vw;
-      margin-bottom: 10vw;
+
+    @media only screen and (max-height: $screen-size-tiny-5) and (max-width: $screen-size-medium-2) {
+      margin: 4vw 0 10vw 0;
+    }
+
+    @media only screen and (max-height: $screen-size-tiny-5) and (min-width: $screen-size-small) {
+      margin: 10vw 0;
+    }
+
+    @media only screen and (max-height: $screen-size-tiny-5) and (max-width: $screen-size-tiny) {
+      margin: 9vw 0 10vw 0;
     }
   }
 }

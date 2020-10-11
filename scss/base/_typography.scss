@@ -20,7 +20,7 @@ body {
     color: inherit;
     width: max-content;
     border-bottom: solid $border-weight transparent;
-    transition: color 0.3s ease-out;
+    transition: color 0.3s ease-out, border-color 0.3s ease-out;
   }
   &:hover {
     cursor: pointer;
@@ -31,7 +31,12 @@ body {
   &:active {
     outline: none;
     border-bottom: solid $border-weight;
-    border-color: inherit;
+    cursor: pointer;
+    @include var(border-color, color-black);
+  }
+  &:focus:hover,
+  &:active:hover {
+    @include var(border-color, color-primary-dark);
   }
   &::-moz-focus-inner {
     border: 0;
@@ -58,6 +63,11 @@ body {
     @include var(color, color-black);
   }
 
+  &--black:focus:hover,
+  &--black:active:hover {
+    @include var(border-color, color-black);
+  }
+
   &-light {
     &::before {
       content: "";
@@ -75,9 +85,9 @@ body {
       transition: all 0.3s ease-out;
 
       @media only screen and (max-width: $screen-size-medium-2) {
-        opacity: 0.4;
-        box-shadow: 0 0 9rem 9rem map-get($vars, color-white);
-        box-shadow: 0 0 9rem 9rem var(--color-white);
+        opacity: 0.3;
+        box-shadow: 0 0 6rem 5rem map-get($vars, color-white);
+        box-shadow: 0 0 6rem 5rem var(--color-white);
       }
     }
     &:hover::before {
@@ -125,7 +135,9 @@ body {
     (max-height: $screen-size-tiny-3) and (max-width: $screen-size-small) {
     @include var(font-size, font-size-tiny-2);
     @include var(line-height, font-size-small-4);
-    @include var(font-weight, font-weight-6);
+    @include var(color, color-grey-dark);
+  }
+  @media only screen and (max-height: $screen-size-tiny-4) and (min-width: $screen-size-small) {
     @include var(color, color-grey-dark);
   }
 }
@@ -140,6 +152,9 @@ body {
     @include var(font-size, font-size-tiny-2);
     @include var(line-height, font-size-small);
     @include var(font-weight, font-weight-2);
+    @include var(color, color-grey-dark);
+  }
+  @media only screen and (max-height: $screen-size-tiny-4) and (min-width: $screen-size-small) {
     @include var(color, color-grey-dark);
   }
 }

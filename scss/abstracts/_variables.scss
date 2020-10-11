@@ -1,7 +1,9 @@
-$screen-size-tiny: 37.5em; // 600px
-$screen-size-tiny-2: 50em; // 800px
-$screen-size-tiny-3: 43.75em; // 700px
+$screen-size-tiny-6: 18.75em; // 300px
 $screen-size-tiny-4: 25em; // 400px
+$screen-size-tiny-5: 31.25em; // 500px
+$screen-size-tiny: 37.5em; // 600px
+$screen-size-tiny-3: 43.75em; // 700px
+$screen-size-tiny-2: 50em; // 800px
 $screen-size-small: 56.25em; // 900px
 $screen-size-medium: 62.5em; // 1000px
 $screen-size-medium-4: 68.75em; // 1100px
@@ -39,7 +41,7 @@ $vars: (
   font-weight-6: 600,
   color-white: #fff,
   color-black: #000,
-  color-grey-dark: #444,
+  color-grey-dark: #555,
   color-transparent: transparent,
   color-light-1: #e3e9f5,
   color-light-2: #f7f5e9,

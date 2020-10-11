@@ -7,7 +7,7 @@
       -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
 
-      > * {
+      &-item {
         width: calc(100% - 1.3vw);
         position: relative;
         @include var(margin-top, gap-1);
@@ -18,11 +18,11 @@
         height: 100%;
       }
 
-      :nth-child(odd) {
+      > :nth-child(odd) {
         @include var(margin-right, gap-1--half);
         @include column(1);
       }
-      :nth-child(even) {
+      > :nth-child(even) {
         @include var(margin-left, gap-1--half);
         @include column(2);
       }
@@ -39,12 +39,11 @@
         display: flex;
         flex-direction: column;
 
-        :nth-child(odd),
-        :nth-child(even) {
+        > :nth-child(odd),
+        > :nth-child(even) {
           margin: 0;
           width: 100%;
-          @include var(margin-top, gap-1--half);
-          @include var(margin-bottom, gap-1--half);
+          @include var(margin-top, gap-1);
         }
       }
     }
@@ -56,38 +55,48 @@
   }
 }
 
-.height-vert {
-  height: calc(52.125vw - 1.3rem);
+.height-horiz {
+  height: 32.8vw;
+  @media only screen and (max-width: $screen-size-medium-2) {
+    height: 34.4vw;
+  }
   @media only screen and (max-width: $screen-size-small) {
-    height: calc(107.5vw - 2rem);
+    height: 67.5vw;
   }
 }
-.height-horiz {
-  height: calc(33.36vw - 0.7rem);
+
+.height-vert {
+  height: 51.3vw;
+  @media only screen and (max-width: $screen-size-medium-2) {
+    height: 53.5vw;
+  }
   @media only screen and (max-width: $screen-size-small) {
-    height: calc(68.8vw - 1.4rem);
+    height: 110vw;
   }
 }
 .height-sq {
-  height: calc(41.7vw - 1rem);
+  height: 41.1vw;
+  @media only screen and (max-width: $screen-size-medium-2) {
+    height: 42.9vw;
+  }
   @media only screen and (max-width: $screen-size-small) {
-    height: calc(86vw - 1.7rem);
+    height: 88vw;
+  }
+  @media only screen and (max-width: $screen-size-tiny-3) {
+    height: 87vw;
   }
 }
 
 .img-toggler {
   position: absolute;
   top: 0;
-  left: -1.3vw;
+  left: 0;
   width: 100%;
   height: 100%;
   z-index: 10;
-  // -webkit-appearance: none;
-  // opacity: 0;
+  -webkit-appearance: none;
+  opacity: 0;
   outline: none;
-  @media only screen and (max-width: $screen-size-small) {
-    left: 0;
-  }
 
   &:checked {
     position: fixed;
@@ -96,7 +105,6 @@
     width: 100vw;
     height: 100vh;
     z-index: 30;
-    margin: 0 !important;
   }
 
   &:checked ~ .gallery-item > .gallery-item__box {
@@ -106,7 +114,6 @@
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     background-position: center;
-    margin: 0 !important;
   }
 
   &:hover:checked {
@@ -163,11 +170,11 @@
   }
 
   &__img {
-    // @include center();
+    @include center();
     display: block;
-    height: 100%;
-    width: auto !important;
-    background-position: center;
-    margin: 0 !important;
+    max-width: 100vw;
+    max-height: 100vh;
+    width: auto;
+    height: auto;
   }
 }
