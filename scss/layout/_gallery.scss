@@ -8,7 +8,7 @@
       grid-template-columns: 1fr 1fr;
 
       &-item {
-        width: calc(100% - 1.3vw);
+        width: calc(100% - (#{map-get($vars, gap-1--half)}));
         position: relative;
         @include var(margin-top, gap-1);
       }
