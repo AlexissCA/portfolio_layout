@@ -10,6 +10,16 @@
   transition: all 0.4s cubic-bezier(0.64, 0, 0.78, 0);
 }
 
+.menu-img {
+  $url1: "../img/menuBg_600.jpg";
+  $url2: "../img/menuBg_1200.jpg";
+  $url3: "../img/menuBg_1550.jpg";
+  $url4: "../img/menuBg_2326.jpg";
+  $url5: "../img/menuBg_3100.jpg";
+
+  @include img-bg($url1, $url2, $url3, $url4, $url5);
+}
+
 .menu-toggler {
   position: fixed;
   @include var(right, main-length);

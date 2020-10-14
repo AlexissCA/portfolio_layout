@@ -107,26 +107,6 @@ a {
   100% {
     background-position: -200vw 0; } }
 
-.menu-img {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-image: url("../img/menuBg_600.jpg"); }
-  @media only screen and (min-width: 37.5em), (min-resolution: 192dpi) and (min-width: 18.75em), (-webkit-min-device-pixel-ratio: 2) and (min-width: 18.75em), (min-resolution: 288dpi) and (min-width: 12.5em), (-webkit-min-device-pixel-ratio: 3) and (min-width: 12.5em) {
-    .menu-img {
-      background-image: url("../img/menuBg_1200.jpg"); } }
-  @media only screen and (min-width: 75em), (min-resolution: 192dpi) and (min-width: 37.5em), (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), (min-resolution: 288dpi) and (min-width: 25em), (-webkit-min-device-pixel-ratio: 3) and (min-width: 25em) {
-    .menu-img {
-      background-image: url("../img/menuBg_1550.jpg"); } }
-  @media only screen and (min-width: 96em), (min-resolution: 192dpi) and (min-width: 48em), (-webkit-min-device-pixel-ratio: 2) and (min-width: 48em), (min-resolution: 288dpi) and (min-width: 32em), (-webkit-min-device-pixel-ratio: 3) and (min-width: 32em) {
-    .menu-img {
-      background-image: url("../img/menuBg_2326.jpg"); } }
-  @media only screen and (min-width: 145em), (min-resolution: 192dpi) and (min-width: 72.5em), (-webkit-min-device-pixel-ratio: 2) and (min-width: 72.5em), (min-resolution: 288dpi) and (min-width: 48em), (-webkit-min-device-pixel-ratio: 3) and (min-width: 48em) {
-    .menu-img {
-      background-image: url("../img/menuBg_3100.jpg"); } }
-
 body {
   font-family: "Rubik", sans-serif;
   font-family: var(--font-1);
@@ -321,6 +301,7 @@ body {
   font-weight: 500;
   font-weight: var(--font-weight-4);
   display: inline-block;
+  -ms-writing-mode: tb-lr;
   writing-mode: vertical-lr;
   -ms-user-select: none;
   user-select: none; }
@@ -372,18 +353,14 @@ body {
       height: var(--main-length-small--double); } }
 
 .side-box {
-  transform: translateY(-50%) rotate(-90deg);
   position: fixed;
   top: 50vh;
-  right: -7vh;
   margin: 0 calc( (7vw - 1.4rem) / 2);
   margin: 0 var(--main-length--half);
   pointer-events: none;
-  z-index: 1; }
-  @supports (writing-mode: vertical-lr) {
-    .side-box {
-      transform: translateY(-50%) rotate(180deg);
-      right: 0; } }
+  z-index: 1;
+  transform: translateY(-50%) rotate(180deg);
+  right: 0; }
   @media only screen and (max-width: 75em) {
     .side-box {
       margin: 0 calc( (5vw - 1.4rem) / 2);
@@ -402,6 +379,26 @@ body {
   height: 100%;
   transform: translate(100vw);
   transition: all 0.4s cubic-bezier(0.64, 0, 0.78, 0); }
+
+.menu-img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../img/menuBg_600.jpg"); }
+  @media only screen and (min-width: 37.5em), (min-resolution: 192dpi) and (min-width: 18.75em), (-webkit-min-device-pixel-ratio: 2) and (min-width: 18.75em), (min-resolution: 288dpi) and (min-width: 12.5em), (-webkit-min-device-pixel-ratio: 3) and (min-width: 12.5em) {
+    .menu-img {
+      background-image: url("../img/menuBg_1200.jpg"); } }
+  @media only screen and (min-width: 75em), (min-resolution: 192dpi) and (min-width: 37.5em), (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), (min-resolution: 288dpi) and (min-width: 25em), (-webkit-min-device-pixel-ratio: 3) and (min-width: 25em) {
+    .menu-img {
+      background-image: url("../img/menuBg_1550.jpg"); } }
+  @media only screen and (min-width: 96em), (min-resolution: 192dpi) and (min-width: 48em), (-webkit-min-device-pixel-ratio: 2) and (min-width: 48em), (min-resolution: 288dpi) and (min-width: 32em), (-webkit-min-device-pixel-ratio: 3) and (min-width: 32em) {
+    .menu-img {
+      background-image: url("../img/menuBg_2326.jpg"); } }
+  @media only screen and (min-width: 145em), (min-resolution: 192dpi) and (min-width: 72.5em), (-webkit-min-device-pixel-ratio: 2) and (min-width: 72.5em), (min-resolution: 288dpi) and (min-width: 48em), (-webkit-min-device-pixel-ratio: 3) and (min-width: 48em) {
+    .menu-img {
+      background-image: url("../img/menuBg_3100.jpg"); } }
 
 .menu-toggler {
   position: fixed;

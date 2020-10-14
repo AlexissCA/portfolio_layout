@@ -97,13 +97,3 @@
     background-image: url($url-5);
   }
 }
-
-.menu-img {
-  $url1: "../img/menuBg_600.jpg";
-  $url2: "../img/menuBg_1200.jpg";
-  $url3: "../img/menuBg_1550.jpg";
-  $url4: "../img/menuBg_2326.jpg";
-  $url5: "../img/menuBg_3100.jpg";
-
-  @include img-bg($url1, $url2, $url3, $url4, $url5);
-}

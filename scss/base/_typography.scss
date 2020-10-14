@@ -179,6 +179,7 @@ body {
   @include var(line-height, font-size-tiny);
   @include var(font-weight, font-weight-4);
   display: inline-block;
+  -ms-writing-mode: tb-lr;
   writing-mode: vertical-lr;
   -ms-user-select: none;
   user-select: none;

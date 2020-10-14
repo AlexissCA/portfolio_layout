@@ -60,19 +60,14 @@
 }
 
 .side-box {
-  transform: translateY(-50%) rotate(-90deg);
   position: fixed;
   top: 50vh;
-  right: -7vh;
   margin: 0 map-get($vars, main-length--half);
   margin: 0 var(--main-length--half);
   pointer-events: none;
   z-index: 1;
-
-  @supports (writing-mode: vertical-lr) {
-    transform: translateY(-50%) rotate(180deg);
-    right: 0;
-  }
+  transform: translateY(-50%) rotate(180deg);
+  right: 0;
 
   @media only screen and (max-width: $screen-size-medium-2) {
     margin: 0 map-get($vars, main-length-small--half);
